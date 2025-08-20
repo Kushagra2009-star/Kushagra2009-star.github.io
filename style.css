@@ -18,7 +18,7 @@ header {
   font-size: 2.5rem;
   color: #fff;
   text-transform: uppercase;
-  animation: waveGlow 4s infinite linear;
+  animation: waveGlow 10s infinite linear; /* Slower wave animation */
   background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -28,7 +28,7 @@ header {
 .sub-glow {
   font-size: 1.2rem;
   margin-top: 0.5rem;
-  animation: waveGlow 4s infinite linear;
+  animation: waveGlow 10s infinite linear; /* Slower wave animation */
   background: linear-gradient(90deg, cyan, magenta, lime, yellow, cyan);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
