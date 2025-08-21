@@ -1,113 +1,117 @@
-/* General */
+/* Global */
 body {
-  background-color: black;
-  color: white;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  text-align: center;
+  line-height: 1.6;
+  background: #000; /* Black background */
+  color: #eee;
+}
+
+/* Navigation */
+nav {
+  background: #111;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  margin: 0 1rem;
+}
+nav a {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #ff0;
 }
 
 /* Header */
 header {
-  padding: 50px 20px;
+  text-align: center;
+  padding: 3rem 1rem;
 }
 
-/* Wavy Animation */
-.wavy-text {
-  font-size: 2.5rem;
-  font-weight: bold;
-  display: inline-block;
-  animation: wave 6s infinite ease-in-out;
-  color: cyan;
-}
-
-@keyframes wave {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Glow Text */
 .glow-text {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  animation: waveGlow 10s infinite linear;
+  background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+}
+
+.sub-glow {
   font-size: 1.2rem;
-  color: #fff;
-  text-shadow: 0 0 10px cyan, 0 0 20px blue, 0 0 40px purple;
+  margin-top: 0.5rem;
+  animation: waveGlow 10s infinite linear;
+  background: linear-gradient(90deg, cyan, magenta, lime, yellow, cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
 }
 
-/* Navigation */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Sections */
+section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* About Page */
+.about-page {
+  text-align: center;
+}
+
+/* Project Cards */
+.projects-container {
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  gap: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: cyan;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: magenta;
-}
-
-/* Projects */
-#projects {
-  padding: 50px 20px;
+  flex-wrap: wrap;
 }
 
 .project {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
+  flex: 1 1 calc(45% - 1rem);
+  background: #111;
+  padding: 1rem;
   border-radius: 12px;
-  background: black; /* tile inside stays black */
-  border: 3px solid transparent;
-  position: relative;
+  text-align: center;
+  border: 2px solid transparent;
+  animation: rgbGlow 5s infinite;
+  transition: transform 0.3s ease;
+}
+.project:hover {
+  transform: scale(1.05);
 }
 
-/* Glowing border effect */
-.project::before {
-  content: "";
-  position: absolute;
-  top: -3px; left: -3px; right: -3px; bottom: -3px;
-  border-radius: 12px;
-  background: linear-gradient(270deg, #ff00ff, #00ffff, #ff00ff);
-  background-size: 600% 600%;
-  animation: rgbGlow 8s ease infinite;
-  z-index: -1;
-}
-
-/* Project title */
-.project h3 {
-  margin-bottom: 10px;
+.project a {
+  text-decoration: none;
+  color: #00faff;
   font-weight: bold;
-  color: white;
-  text-shadow: 0 0 8px cyan, 0 0 16px magenta;
 }
 
-/* Video inside project */
-.project-video {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  margin: 15px 0;
-  border: 2px solid cyan;
-  box-shadow: 0px 0px 12px cyan;
-}
-
-/* RGB glowing background animation */
-@keyframes rgbGlow {
+/* Glow Animations */
+@keyframes waveGlow {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
 }
 
-/* Contact */
-#contact {
-  padding: 50px 20px;
+@keyframes rgbGlow {
+  0% { border-color: red; box-shadow: 0 0 10px red; }
+  25% { border-color: blue; box-shadow: 0 0 10px blue; }
+  50% { border-color: lime; box-shadow: 0 0 10px lime; }
+  75% { border-color: violet; box-shadow: 0 0 10px violet; }
+  100% { border-color: red; box-shadow: 0 0 10px red; }
 }
