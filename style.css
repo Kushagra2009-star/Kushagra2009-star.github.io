@@ -65,14 +65,29 @@ nav ul li a:hover {
   padding: 20px;
   max-width: 600px;
   border-radius: 12px;
+  background: black; /* tile inside stays black */
+  border: 3px solid transparent;
+  position: relative;
+}
+
+/* Glowing border effect */
+.project::before {
+  content: "";
+  position: absolute;
+  top: -3px; left: -3px; right: -3px; bottom: -3px;
+  border-radius: 12px;
   background: linear-gradient(270deg, #ff00ff, #00ffff, #ff00ff);
   background-size: 600% 600%;
   animation: rgbGlow 8s ease infinite;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+  z-index: -1;
 }
 
+/* Project title */
 .project h3 {
   margin-bottom: 10px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 8px cyan, 0 0 16px magenta;
 }
 
 /* Video inside project */
@@ -81,7 +96,8 @@ nav ul li a:hover {
   max-width: 500px;
   border-radius: 10px;
   margin: 15px 0;
-  box-shadow: 0px 0px 10px cyan;
+  border: 2px solid cyan;
+  box-shadow: 0px 0px 12px cyan;
 }
 
 /* RGB glowing background animation */
