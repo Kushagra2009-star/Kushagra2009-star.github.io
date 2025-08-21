@@ -1,70 +1,85 @@
-/* Projects */
-#projects {
-  padding: 50px 20px;
+/* Global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: #000; /* Black background */
+  color: #eee;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.glow-text {
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  animation: waveGlow 4s infinite linear;
+  background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+}
+
+.sub-glow {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  animation: waveGlow 4s infinite linear;
+  background: linear-gradient(90deg, cyan, magenta, lime, yellow, cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Project Cards */
+.projects-container {
   display: flex;
-  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .project {
-  flex: 1 1 45%; /* side by side, equal size */
-  max-width: 45%;
-  min-width: 280px; /* prevents shrinking too small */
-  margin: 10px;
-  padding: 20px;
+  flex: 1 1 calc(45% - 1rem);
+  background: #111;
+  padding: 1rem;
   border-radius: 12px;
-  border: 2px solid transparent; 
-  background: black; /* solid background */
-  background-clip: padding-box; 
-  position: relative;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
-  transition: transform 0.3s;
+  text-align: center;
+  border: 2px solid transparent;
+  animation: rgbGlow 5s infinite;
+  transition: transform 0.3s ease;
+}
+.project:hover {
+  transform: scale(1.05);
 }
 
-.project::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 12px;
-  padding: 2px;
-  background: linear-gradient(270deg, #ff00ff, #00ffff, #ff00ff);
-  background-size: 600% 600%;
-  animation: rgbGlow 8s ease infinite;
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+.project a {
+  text-decoration: none;
+  color: #00faff;
+  font-weight: bold;
 }
 
-.project h3 {
-  margin-bottom: 10px;
-  text-align: center; /* keep title centered */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px; /* spacing between emoji + text */
+/* Glow Animations */
+@keyframes waveGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
 }
 
-/* Video inside project */
-.project-video {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  margin: 15px 0;
-  box-shadow: 0px 0px 10px cyan;
-}
-
-/* Responsive: On small screens, stack projects */
-@media (max-width: 768px) {
-  #projects {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project {
-    max-width: 90%;
-  }
+@keyframes rgbGlow {
+  0% { border-color: red; box-shadow: 0 0 10px red; }
+  25% { border-color: blue; box-shadow: 0 0 10px blue; }
+  50% { border-color: lime; box-shadow: 0 0 10px lime; }
+  75% { border-color: violet; box-shadow: 0 0 10px violet; }
+  100% { border-color: red; box-shadow: 0 0 10px red; }
 }
