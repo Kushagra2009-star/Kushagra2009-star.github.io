@@ -1,117 +1,12 @@
-/* Global */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background: #000; /* Black background */
-  color: #eee;
-}
-
-/* Navigation */
-nav {
-  background: #111;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-nav li {
-  margin: 0 1rem;
-}
-nav a {
-  color: #0ff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-nav a:hover {
-  color: #ff0;
-}
-
-/* Header */
-header {
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.glow-text {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  animation: waveGlow 10s infinite linear;
-  background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 400%;
-}
-
-.sub-glow {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  animation: waveGlow 10s infinite linear;
-  background: linear-gradient(90deg, cyan, magenta, lime, yellow, cyan);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 400%;
-}
-
-/* Sections */
-section {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* About Page */
-.about-page {
-  text-align: center;
-}
-
-/* Project Cards */
-.projects-container {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.project {
-  flex: 1 1 calc(45% - 1rem);
-  background: #111;
-  padding: 1rem;
-  border-radius: 12px;
-  text-align: center;
-  border: 2px solid transparent;
-  animation: rgbGlow 5s infinite;
+.project-video {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  box-shadow: 0 0 10px rgba(0,255,255,0.6);
   transition: transform 0.3s ease;
 }
-.project:hover {
+.project-video:hover {
   transform: scale(1.05);
-}
-
-.project a {
-  text-decoration: none;
-  color: #00faff;
-  font-weight: bold;
-}
-
-/* Glow Animations */
-@keyframes waveGlow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 400% 50%; }
-}
-
-@keyframes rgbGlow {
-  0% { border-color: red; box-shadow: 0 0 10px red; }
-  25% { border-color: blue; box-shadow: 0 0 10px blue; }
-  50% { border-color: lime; box-shadow: 0 0 10px lime; }
-  75% { border-color: violet; box-shadow: 0 0 10px violet; }
-  100% { border-color: red; box-shadow: 0 0 10px red; }
 }
