@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kushagra | AI & Robotics Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add this small fix */
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem; /* spacing between links */
+      align-items: center; /* optional: center-align links */
+    }
+    .project-links a {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <!-- Header / Hero Section -->
@@ -13,12 +25,14 @@
     <h2 class="sub-glow">by – Kushagra Gangwar</h2>
     <p>Here I showcase my journey to AI & ROBOTICS learning, my projects, and much more 🚀</p>
   </header>
+
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
     <p>Hi, I'm Kushagra! Passionate about AI, Robotics, and building real-world projects. 
        This site showcases my journey: projects, certificates, and lessons learned from failures.</p>
   </section>
+
   <!-- Projects Section -->
   <section id="projects">
     <h2>My Projects</h2>
@@ -28,22 +42,24 @@
         <p>A robot simulation in Webots using Python for autonomous movement.</p>
         <a href="https://github.com/Kushagra2009-star/robot-project" target="_blank">View Code</a>
       </div>
+
       <div class="project">
         <h3>📊 Home Appliance Tracker Dashboard</h3>
         <p>A data dashboard with AI-powered features to track energy usage.</p>
         <a href="https://github.com/Kushagra2009-star/home-dashboard" target="_blank">View Code</a>
       </div>
+
       <div class="project">
         <h3>🌾 FARM DOCTOR</h3>
         <p>Real-time NDVI satellite analysis system for crop health monitoring using Sentinel-2 imagery and interactive mapping.</p>
         <div class="project-links">
           <a href="https://kushagra2009-star.github.io/FARM-DOCTOR/" target="_blank">🌐 Visit Site</a>
-          
           <a href="https://github.com/Kushagra2009-star/FARM-DOCTOR" target="_blank">💻 View Repository</a>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Certificates Section -->
   <section id="certificates">
     <h2>Certificates</h2>
@@ -53,12 +69,14 @@
       <li>NVIDIA AI & Robotics Certificate</li>
     </ul>
   </section>
+
   <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:gangwarkushagra70@gmail.com">gangwarkushagra70@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/Kushagra2009-star" target="_blank">Kushagra2009-star</a></p>
   </section>
+
   <script src="script.js"></script>
 </body>
 </html>
